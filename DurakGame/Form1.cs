@@ -6,5 +6,10 @@ namespace DurakGame
         {
             InitializeComponent();
         }
+
+        public String HelloWorld()
+        {
+            return "Hello World";
+        }
     }
 }
