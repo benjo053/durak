@@ -11,5 +11,9 @@ namespace DurakGame
         {
             return "Hello World";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
