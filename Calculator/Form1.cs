@@ -25,9 +25,19 @@ namespace Calculator
             textBox1.Text = (textBox1.Text == "0") ? button.Text : textBox1.Text + button.Text;
         }
 
+        private void Add_onClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text += "*";
+        }
+
+        private void Minus_onClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text += "*";
+        }
+
         private void Multiply_onClick(object sender, MouseEventArgs e)
         {
-            textBox1.Text = "123*";
+            textBox1.Text += "*";
         }
 
         private void Divide_onClick(object sender, MouseEventArgs e)

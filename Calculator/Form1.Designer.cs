@@ -185,7 +185,7 @@ namespace Calculator
             this.roundButton5.TabIndex = 8;
             this.roundButton5.Text = "+";
             this.roundButton5.UseVisualStyleBackColor = false;
-            this.roundButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Number_onClick);
+            this.roundButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Add_onClick);
             // 
             // roundButton6
             // 
@@ -198,7 +198,7 @@ namespace Calculator
             this.roundButton6.TabIndex = 9;
             this.roundButton6.Text = "-";
             this.roundButton6.UseVisualStyleBackColor = false;
-            this.roundButton6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Number_onClick);
+            this.roundButton6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Minus_onClick);
             // 
             // roundButton7
             // 
@@ -270,7 +270,7 @@ namespace Calculator
             this.roundButton12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.roundButton12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.roundButton12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton12.Location = new System.Drawing.Point(132, 298);
+            this.roundButton12.Location = new System.Drawing.Point(128, 298);
             this.roundButton12.Name = "roundButton12";
             this.roundButton12.Size = new System.Drawing.Size(110, 109);
             this.roundButton12.TabIndex = 15;
@@ -377,7 +377,7 @@ namespace Calculator
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.Size = new System.Drawing.Size(462, 142);
             this.textBox1.TabIndex = 23;
             this.textBox1.Text = "0";
