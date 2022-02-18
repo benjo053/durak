@@ -30,7 +30,7 @@ class Taschenrechner
         return eingabe;
     }
 
-    public int GetErgebnis()
+    public double GetErgebnis()
     {
         return LeseAusdruck();
     }
@@ -50,21 +50,30 @@ class Taschenrechner
         return current;
     }
 
-    public int LeseZahl()
+    public double LeseZahl()
     {
-        int zahl = LeseZeichen() - '0';
+        double zahl = LeseZeichen() - '0';
         while (Char.IsDigit(PeekZeichen()))
         {
             zahl *= 10;
             zahl += (LeseZeichen() - '0');
+        } if (PeekZeichen() == ',')
+        {
+            LeseZeichen();
+            int i = 10;
+            while (Char.IsDigit(PeekZeichen()))
+            {
+                zahl += (double) (LeseZeichen() - '0')/i;
+                i *= 10;
+            }
         }
         return zahl;
     }
 
-    public int LeseAusdruck()
+    public double LeseAusdruck()
     {
         char c = PeekZeichen();
-        int erg;
+        double erg;
         if (c == '+')
         {
             LeseZeichen();
@@ -96,9 +105,9 @@ class Taschenrechner
         return erg;
     }
 
-    public int LeseSummand()
+    public double LeseSummand()
     {
-        int erg = LeseFaktor();
+        double erg = LeseFaktor();
         char c;
         do
         {
@@ -117,10 +126,10 @@ class Taschenrechner
         return erg;
     }
 
-    public int LeseFaktor()
+    public double LeseFaktor()
     {
         char c = PeekZeichen();
-        int erg;
+        double erg;
         if (c == '(')
         {
             LeseZeichen();
@@ -128,7 +137,7 @@ class Taschenrechner
             c = LeseZeichen();
             if (c != ')')
             {
-                throw new ArgumentException("FEHLER: ')' erwartet!");
+                MessageBox.Show("FEHLER: ')' erwartet!");
             }
         }
         else

@@ -1,75 +1,4 @@
-﻿/*namespace Calculator
-{
-    partial class Form1
-    {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(132, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(546, 47);
-            this.textBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(283, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 58);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        #endregion
-
-        private TextBox textBox1;
-        private Button button1;
-    }
-}*/
-namespace Calculator
+﻿namespace Calculator
 {
     partial class Form1
     {
@@ -183,9 +112,10 @@ namespace Calculator
             this.roundButton5.Name = "roundButton5";
             this.roundButton5.Size = new System.Drawing.Size(110, 109);
             this.roundButton5.TabIndex = 8;
+            this.roundButton5.Tag = "+";
             this.roundButton5.Text = "+";
             this.roundButton5.UseVisualStyleBackColor = false;
-            this.roundButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Add_onClick);
+            this.roundButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Symbol_onClick);
             // 
             // roundButton6
             // 
@@ -196,9 +126,10 @@ namespace Calculator
             this.roundButton6.Name = "roundButton6";
             this.roundButton6.Size = new System.Drawing.Size(110, 109);
             this.roundButton6.TabIndex = 9;
+            this.roundButton6.Tag = "-";
             this.roundButton6.Text = "-";
             this.roundButton6.UseVisualStyleBackColor = false;
-            this.roundButton6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Minus_onClick);
+            this.roundButton6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Symbol_onClick);
             // 
             // roundButton7
             // 
@@ -287,9 +218,10 @@ namespace Calculator
             this.roundButton13.Name = "roundButton13";
             this.roundButton13.Size = new System.Drawing.Size(110, 109);
             this.roundButton13.TabIndex = 16;
+            this.roundButton13.Tag = "*";
             this.roundButton13.Text = "×";
             this.roundButton13.UseVisualStyleBackColor = false;
-            this.roundButton13.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Multiply_onClick);
+            this.roundButton13.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Symbol_onClick);
             // 
             // roundButton14
             // 
@@ -352,9 +284,10 @@ namespace Calculator
             this.roundButton18.Name = "roundButton18";
             this.roundButton18.Size = new System.Drawing.Size(110, 109);
             this.roundButton18.TabIndex = 21;
+            this.roundButton18.Tag = "/";
             this.roundButton18.Text = "÷";
             this.roundButton18.UseVisualStyleBackColor = false;
-            this.roundButton18.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Divide_onClick);
+            this.roundButton18.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Symbol_onClick);
             // 
             // roundButton19
             // 
@@ -365,8 +298,10 @@ namespace Calculator
             this.roundButton19.Name = "roundButton19";
             this.roundButton19.Size = new System.Drawing.Size(110, 109);
             this.roundButton19.TabIndex = 22;
+            this.roundButton19.Tag = ",";
             this.roundButton19.Text = ",";
             this.roundButton19.UseVisualStyleBackColor = false;
+            this.roundButton19.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Symbol_onClick);
             // 
             // textBox1
             // 
@@ -381,6 +316,7 @@ namespace Calculator
             this.textBox1.Size = new System.Drawing.Size(462, 142);
             this.textBox1.TabIndex = 23;
             this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -411,7 +347,7 @@ namespace Calculator
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
-            this.Text = "Imbh";
+            this.Text = "Calc";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
